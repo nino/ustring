@@ -30,7 +30,7 @@ let iter_pairs ~f = function
           current);
       ()
 
-let str_res_printer = function
+let str_result_printer = function
   | Ok str -> "Ok «" ^ str ^ "»"
   | Error str -> "Error «" ^ str ^ "»"
 
@@ -42,9 +42,9 @@ let read_test_data () : string list =
 let tests =
   [
     ( "code point to UTF-8" >:: fun _ ->
-      assert_equal ~printer:str_res_printer (Ok "A")
+      assert_equal ~printer:str_result_printer (Ok "A")
         (Ustring.codepoint_to_utf8 0x41);
-      assert_equal ~printer:str_res_printer (Ok "\u{1F42B}")
+      assert_equal ~printer:str_result_printer (Ok "\u{1F42B}")
         (Ustring.codepoint_to_utf8 0x1F42B) );
     ( "sorting works" >:: fun _ ->
       iter_pairs (read_test_data ()) ~f:(fun prev next ->

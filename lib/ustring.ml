@@ -10,7 +10,7 @@ let codepoint_to_utf8 codepoint =
       (String.of_char_list
          [
            Char.of_int_exn (0b1100_0000 lor ((codepoint lsr 6) land 0b00011111));
-           Char.of_int_exn (0b1000_0000 lor (codepoint land 0x00111111));
+           Char.of_int_exn (0b1000_0000 lor (codepoint land 0b00111111));
          ])
   else if 0x800 <= codepoint && codepoint <= 0xFFFF then
     Ok
@@ -27,7 +27,7 @@ let codepoint_to_utf8 codepoint =
            Char.of_int_exn (0b1111_0000 lor ((codepoint lsr 18) land 0b00000111));
            Char.of_int_exn (0b1000_0000 lor ((codepoint lsr 12) land 0b00111111));
            Char.of_int_exn (0b1000_0000 lor ((codepoint lsr 6) land 0b00111111));
-           Char.of_int_exn (0b1000_0000 lor (codepoint land 0xFF));
+           Char.of_int_exn (0b1000_0000 lor (codepoint land 0b00111111));
          ])
   else Error "not a valid unicode code point"
 
