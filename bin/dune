@@ -1,0 +1,4 @@
+(executable
+ (public_name ustring)
+ (name main)
+ (libraries ustring))

@@ -1,0 +1,4 @@
+(test
+ (name ustring_test)
+ (flags -open Base)
+ (libraries ustring ounit2 base stdio re))

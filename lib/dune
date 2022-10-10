@@ -1,0 +1,5 @@
+(library
+ (name ustring)
+ (public_name ustring)
+ (flags -open Base)
+ (libraries uuseg uuseg.string base re))
