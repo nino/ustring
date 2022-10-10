@@ -5,22 +5,22 @@
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github nino/ustring))
 
-(authors "Author Name")
+(authors "Nino Annighoefer")
 
-(maintainers "Maintainer Name")
+(maintainers "Nino Annighoefer")
 
-(license LICENSE)
+(license MIT)
 
-(documentation https://url/to/documentation)
+(documentation https://github.com/nino/ustring/blob/trunk/lib/ustring.mli)
 
 (package
  (name ustring)
- (synopsis "A short synopsis")
- (description "A longer description")
- (depends ocaml dune)
+ (synopsis "OCaml unicode utilities")
+ (description "An attempt to learn about Unicode by implementing some functions in OCaml.")
+ (depends ocaml dune base ounit2 uuseg uuseg.string re stdio)
  (tags
-  (topics "to describe" your project)))
+  (topics unicode learning)))
 
 ; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project
